@@ -1,7 +1,28 @@
 <div class="container">
   <h1>Hello Angular</h1>
+  <hr>
+  <button (click)="toggleCard()">Toggle Cards</button>
+  <hr>
 
+  <!-- ховаю картки за допомогою *ngIf else -->
+  <!-- <div *ngIf="toggle; else noCards">  
   <app-card></app-card>
   <app-card></app-card>
   <app-card></app-card>
+</div> -->
+<!-- or -->
+
+<div *ngIf="toggle; else noCards">  
+ <app-card
+ *ngFor="let iterCard of cards; let idx = index"
+ [card]="iterCard"
+ [index]="idx + 1"
+ ></app-card>
+</div>
+
+<!-- створюю блок else який видно після того як сховаються картки-->
+<ng-template #noCards>
+  <p>Cards are hiden</p>
+</ng-template>
+
 </div>

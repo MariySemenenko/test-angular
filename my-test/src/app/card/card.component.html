@@ -1,7 +1,64 @@
 
 <div class="card">
-<h2>Card Component</h2>
-<p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque omnis voluptates similique rerum adipisci nesciunt maiores odit dolor, ea quae veritatis minima cumque sint animi neque suscipit reiciendis. Dolorem, omnis?
-</p>
+    <!-- виводю різні типи данних -->
+<h2 [ngStyle]="{
+    color: card.title.length < 5 ? 'red' : 'green',
+    fontWeight: card.title.length < 7 ? 'normal' : 'bold'
+}">{{ index }} {{ card.title }}</h2>
+
+<!-- <p class="text" [ngClass]="{
+    blue: textColor === 'blue',
+    green: textColor === 'green',
+    red: textColor === 'red'
+
+}">{{ text }}</p> -->
+<!-- or -->
+<p 
+ class="text"
+    [class.blue]="textColor === 'blue'"
+    [class.green]="textColor === 'green'"
+    [class.red]="textColor === 'red'" 
+
+>{{ card.text }}</p>
+
+
+
+<strong>Number: {{ number }}</strong>
+<em>{{ array }}</em>
+<p>{{ obj | json }}</p>
+<!-- форматування -->
+<!-- <pre>{{ obi | json }}</pre> -->
+
+<!-- виводю методи -->
+<p>{{ getInfo() }}</p>
+
+<!-- виводю картинку -->
+<div>
+    <!-- <img src="{{ imgUrl }}"> -->
+    <!-- or -->
+    <img [src]="imgUrl">
+</div>
+<br>
+<button class="buttons" [disabled]="disabled" >Enable</button>
+
+<div class="buttons">
+    <!-- при кліку на цю кнопку ми змінюємо title -->
+<button (click)="changeTitle()">Change title</button>
+<button (click)="card.title = 'Inline title'" >Change title inlane</button>
+</div>
+
+<!-- міняю title за допомогою input -->
+<!-- <div class="buttons">
+    <input type="text" (input)="inputHandler($event)">
+</div> -->
+<!-- or with FormComponent-->
+<input class="buttons" type="text" [(ngModel)]="card.title" (ngModelChange)="changeTitleHandler()">
+
+
+<div class="buttons">
+<button (click)="textColor = 'blue'">Set blue</button>
+<button (click)="textColor = 'green'">Set green</button>
+<button (click)="textColor = 'red'">Set red</button>
+</div>
+
 </div>

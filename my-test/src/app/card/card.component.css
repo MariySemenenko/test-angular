@@ -1,8 +1,24 @@
 .card {
-    padding: .5rem 1rem;
-    border: 1px dashed #ccc;
-    margin-bottom: .1rem;
+    padding: 1rem 1rem;
+    border: 1px dashed #b11111;
+    margin-bottom: 1rem;
 }
 h2 {
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
+}
+.buttons {
+    margin-bottom: 2rem;
+}
+.text {
+    font-size: 1.5rem;
+
+    &.red {
+        color:rgb(255, 0, 8);
+    }
+    &.blue {
+        color:rgb(55, 0, 255);
+    }
+    &.green {
+        color:rgb(0, 255, 149);
+    }
 }
