@@ -26,6 +26,9 @@ getInfo(): string {
     return 'This is my info'
 }
 
+//pipe(rtansformer date)часи в реальному часі
+cardDate: Date = new Date()
+
 // заблокувати кнопку
 disabled = false
 

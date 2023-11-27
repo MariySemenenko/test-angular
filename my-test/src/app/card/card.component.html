@@ -24,6 +24,7 @@
 
 
 <strong>Number: {{ number }}</strong>
+<br>
 <em>{{ array }}</em>
 <p>{{ obj | json }}</p>
 <!-- форматування -->
@@ -61,4 +62,12 @@
 <button (click)="textColor = 'red'">Set red</button>
 </div>
 
+<!-- добавляю часи в реальному часі -->
+<div>
+    <strong>
+        {{ cardDate | date:'short' }}
+        <br>
+        {{ cardDate | date:'dd MMMM yyyy HH:mm:ss':'uk' }}
+    </strong>
+</div>
 </div>
